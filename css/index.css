@@ -1,0 +1,90 @@
+body {
+  margin: auto;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #b8b8b8 !important;
+}
+
+#restaurantName {
+  text-align: center;
+  background-color: gray;
+  width: 100%;
+  padding: 5%;
+}
+
+#mainDish {
+  min-height: 400px;
+}
+
+#pasta {
+  min-height: 400px;
+}
+
+#fish {
+  min-height: 400px;
+  background-color: dimgrey !important;
+}
+
+#soup {
+  min-height: 400px;
+}
+
+#mainDishLeft {
+  max-width: 100%;
+  max-height: 600px;
+  min-height: 400px;
+  background-image: url("../images/main_dish.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#pastaRight {
+  max-width: 100%;
+  max-height: 600px;
+  min-height: 400px;
+  display: block;
+  position: relative;
+  background-image: url("../images/emanuel-ekstrom-KJOUnsGXq58-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 60%;
+}
+
+#fishLeft {
+  max-width: 100%;
+  max-height: 600px;
+  min-height: 400px;
+  display: block;
+  position: relative;
+  background-image: url("../images/fish_big.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 50%;
+}
+
+#soupsRight {
+  max-width: 100%;
+  max-height: 600px;
+  min-height: 400px;
+  display: block;
+  position: relative;
+  background-image: url("../images/Soup_big.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 60%;
+}
+
+#mainDishRight,
+#pastaLeft,
+#fishRight,
+#soupsLeft {
+  text-align: center;
+}
+
+@media screen and (max-width: 999px) {
+  #fishLeft {
+    margin-top: 5%;
+  }
+}
