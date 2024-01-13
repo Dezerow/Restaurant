@@ -17,16 +17,19 @@
             <a class="nav-link" href="index.php">Strona główna</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#mainDish">Dania główne</a>
+            <a class="nav-link mainBar" id="test" href="#mainDish">Dania główne</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#pasta">Makarony</a>
+            <a class="nav-link mainBar" href="#pasta">Makarony</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#fish">Ryby</a>
+            <a class="nav-link mainBar" href="#fish">Ryby</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#soups">Zupy</a>
+            <a class="nav-link mainBar" href="#soups">Zupy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link mainBar" href="#footer">Kontakt</a>
         </li>
     </ul>
 
@@ -57,7 +60,22 @@
 </nav>
 
 
+<script>
 
+    const currentUrl = window.location.href;
+    console.log(currentUrl);
+
+    if(currentUrl.includes('login.php') || currentUrl.includes("register.php")){
+      window.onload = () => {
+        let elements = document.querySelectorAll('.mainBar');
+            elements.forEach((element)=>{
+                element.className+=" hideMainBar"; 
+            });
+        }       
+     }else{
+         document.getElementsByClassName("mainBar").className-=(" hideMainBar")
+     }
+</script>
 
 
 
