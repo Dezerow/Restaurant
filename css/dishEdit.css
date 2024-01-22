@@ -1,0 +1,23 @@
+.dishEdit {
+  margin-top: 7%;
+  color: red;
+  background-color: #e0e0e0 !important;
+  text-align: center;
+}
+
+.chooseOption {
+  text-align: center;
+}
+
+#hideMainDish,
+#hidePasta,
+#hideFish,
+#hideSoup {
+  display: none;
+}
+
+#showMainDish,
+#showPasta,
+#showFish,
+#showSoup {
+}

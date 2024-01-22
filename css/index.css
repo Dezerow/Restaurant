@@ -86,6 +86,12 @@ body {
   text-align: center;
 }
 
+@media screen and (max-width: 600px) {
+  body {
+    padding-top: 140px;
+  }
+}
+
 @media screen and (max-width: 999px) {
   #fishLeft {
     margin-top: 5%;

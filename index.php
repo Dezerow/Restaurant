@@ -1,3 +1,7 @@
+<?php
+    session_start(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +9,7 @@
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css" >
     <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <title>Strona główna</title>
 </head>
@@ -142,7 +147,7 @@ include "./components/db_conn.php";
             <div class="col-lg-5 col-md-12 mt-1" id="soupsLeft">
                     <h3 class="mb-4 mt-2">Zupy</h3>
                     <?php
-                        $sql = "SELECT Name, Description, Price from soups";
+                        $sql = "SELECT Name, Price from soups";
                         $result = $conn->query($sql);
                         echo '<div class="row">';
                         if (mysqli_num_rows($result) > 0) {
@@ -152,7 +157,6 @@ include "./components/db_conn.php";
                                     echo '                                
                                     <div class="col-lg-12 col-md-12">
                                         <h5>'.$row['Name'].'</h5>
-                                        <p>'.$row['Description'].'</p>
                                         <p>'.$row['Price'].' zł</p>
                                     </div>';
                                
@@ -160,7 +164,6 @@ include "./components/db_conn.php";
                                     echo '                                
                                     <div class="col-lg-6 col-md-12">
                                         <h5>'.$row['Name'].'</h5>
-                                        <p>'.$row['Description'].'</p>
                                         <p>'.$row['Price'].' zł</p>
                                     </div>';
                                 }

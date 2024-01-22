@@ -1,0 +1,35 @@
+.userPanel {
+  margin-top: 7%;
+  color: red;
+  min-height: 300px;
+  background-color: #e0e0e0 !important;
+}
+
+.userPanelInfo {
+  font-size: 25px;
+  text-align: center;
+}
+
+.discount {
+  font-size: 27px;
+  text-decoration: solid;
+  color: blue;
+}
+
+#username {
+  color: red;
+  text-align: center;
+}
+
+.part {
+  text-align: center;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.adminPanels {
+  text-decoration: none;
+  color: white;
+}

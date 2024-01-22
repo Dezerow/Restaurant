@@ -1,3 +1,7 @@
+<?php
+    session_start(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
     <link rel="stylesheet" href="./css/login.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <title>Strona główna</title>
+    <title>Rejestracja</title>
 </head>
 <body>
 
@@ -24,6 +28,11 @@ include "./components/db_conn.php";
         <div class="card loginPanel">
             <div class="card-body">
                 <h2 class="card-title text-center">Panel rejestracji</h2>
+               <?php
+                    if(isset($_GET['error'])){
+                        echo '<h4 id="loginError">'.$_GET['error'].'</h4>';                
+                    }
+                ?>
             </div>
             <div class="card-body">
                 <form action="./components/register.php" method="POST">

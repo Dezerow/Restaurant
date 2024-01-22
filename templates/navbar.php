@@ -1,7 +1,9 @@
 <?php 
-    session_start(); 
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
+    }
+    if(isset($_SESSION['adminname'])){
+        $adminName = $_SESSION['adminname'];
     }
 ?>
 
@@ -31,6 +33,7 @@
         <li class="nav-item">
             <a class="nav-link mainBar" href="#footer">Kontakt</a>
         </li>
+        
     </ul>
 
         <div class="d-flex"> 
@@ -39,11 +42,19 @@
                     if(isset($_SESSION['username'])){
                         echo'
                         <div class="nav-item" id="collapse-firstitem">
-                            <a href="#">'.$username.'</a>
+                            <a href="userPanel.php">'.$username.'</a>
                         </div>
                         <div class="nav-item collapse-items" id="registration">
                             <a href="components/logout.php">Wyloguj</a>
                          </div>';                      
+                    }else if(isset($_SESSION['adminname'])){
+                        echo'
+                        <div class="nav-item" id="collapse-firstitem">
+                            <a href="adminPanel.php">'.$adminName.'</a>
+                        </div>
+                        <div class="nav-item collapse-items" id="registration">
+                            <a href="components/logout.php">Wyloguj</a>
+                         </div>';         
                     }else{
                         echo' 
                         <div class="nav-item" id="collapse-firstitem">
@@ -60,22 +71,7 @@
 </nav>
 
 
-<script>
-
-    const currentUrl = window.location.href;
-    console.log(currentUrl);
-
-    if(currentUrl.includes('login.php') || currentUrl.includes("register.php")){
-      window.onload = () => {
-        let elements = document.querySelectorAll('.mainBar');
-            elements.forEach((element)=>{
-                element.className+=" hideMainBar"; 
-            });
-        }       
-     }else{
-         document.getElementsByClassName("mainBar").className-=(" hideMainBar")
-     }
-</script>
+<script src="js/changeNavbar.js"></script>
 
 
 
