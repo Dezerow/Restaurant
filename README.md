@@ -6,6 +6,7 @@ Projekt nie jest zakończony, zostało:
 - Dodanie asynchronicznego ładowania
 - Dodanie wysyłania emaila wraz z  potwierdzeniem aby stworzyć kontro - php mailer 
 - Dodanie możliwości zmiany swojego adresu email oraz hasła dla użytkownika
+- Możliwość zarządzania użytkownikami
 - Poprawa bugów oraz stworzenie zabezpieczeń
 - Dodanie aplikacji na hosting
 
