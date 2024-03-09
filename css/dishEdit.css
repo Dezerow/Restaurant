@@ -3,10 +3,24 @@
   color: red;
   background-color: #e0e0e0 !important;
   text-align: center;
+  width: 400px;
 }
 
 .chooseOption {
   text-align: center;
+}
+
+label {
+  font-size: 30px;
+}
+
+input {
+  text-align: center;
+}
+
+#result {
+  color: darkgreen;
+  font-size: 25px;
 }
 
 #hideMainDish,

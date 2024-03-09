@@ -34,14 +34,20 @@ include "./components/db_conn.php";
         ?>
         <div class="row mt-5 chooseOption">
             <div class="col-lg-12">
-                <button class="btn btn-info optionsToEdit" id="">Dodaj danie</button>
+                <a href="./addDish.php"><button class="btn btn-info optionsToEdit" id="">Dodaj danie</button></a>
             </div>
             <div class="col-lg-12 mt-3">
                 <button class="btn btn-success optionsToEdit" id="mainDishVisibility">Dania główne</button>
                 <button class="btn btn-success optionsToEdit" id="pastaVisibility">Makarony</button>                
                 <button class="btn btn-success optionsToEdit" id="fishVisibility">Ryby</button>
                 <button class="btn btn-success optionsToEdit" id="soupVisibility">Zupy</button>
+                <button class="btn btn-success optionsToEdit" id="allVisibility">Pokaż/Ukryj wszystkie panele</button>
             </div>             
+            <div class="col-lg-12 mt-3">
+                <p id="result"><?php if(isset($_GET['result'])){
+                    echo $_GET['result'];
+                }?></p>
+            </div>
         </div>
 
         <div class="row mt-5">
@@ -70,10 +76,14 @@ include "./components/db_conn.php";
                                     <td>'.$row['Description'].'</td>
                                     <td>'.$row['Price'].'</td>
                                     <td>
-                                        <button class="btn btn-warning">Edytuj</button>    
-                                        <button class="btn btn-danger">Usuń</button>
-                                    </td>
-                                    </tr>';
+                                        <a href="dishEdit.php?id='.$row['Id'].'&type=main_dish"><button class="btn btn-warning">Edytuj</button></a>';
+                                        echo '<form action="./components/deleteDish.php" method="POST" onsubmit="return confirm(`Czy jesteś pewien, że chcesz usunąć danie z oferty?`);">
+                                        <input type="hidden" name="id" value='.$row['Id'].'/>
+                                        <input type="hidden" name="type" value="main_dish"/>
+                                        <input type="submit" class="btn btn-danger" value="Usuń">
+                                    </form>';                                                            
+                                echo '</td>
+                                </tr>';
                                 }
                             }                        
                         ?>       
@@ -105,10 +115,14 @@ include "./components/db_conn.php";
                                     <td>'.$row['Description'].'</td>
                                     <td>'.$row['Price'].'</td>
                                     <td>
-                                        <button class="btn btn-warning">Edytuj</button>    
-                                        <button class="btn btn-danger">Usuń</button>
-                                    </td>
-                                    </tr>';
+                                        <a href="dishEdit.php?id='.$row['Id'].'&type=pasta"><button class="btn btn-warning">Edytuj</button></a>';
+                                        echo '<form action="./components/deleteDish.php" method="POST" onsubmit="return confirm(`Czy jesteś pewien, że chcesz usunąć danie z oferty?`);">
+                                        <input type="hidden" name="id" value='.$row['Id'].'/>
+                                        <input type="hidden" name="type" value="pasta"/>
+                                        <input type="submit" class="btn btn-danger" value="Usuń">
+                                    </form>';                                                            
+                                echo '</td>
+                                </tr>';
                                 }
                             }                        
                         ?>                  
@@ -140,10 +154,14 @@ include "./components/db_conn.php";
                                     <td>'.$row['Description'].'</td>
                                     <td>'.$row['Price'].'</td>
                                     <td>
-                                        <button class="btn btn-warning">Edytuj</button>    
-                                        <button class="btn btn-danger">Usuń</button>
-                                    </td>
-                                    </tr>';
+                                        <a href="dishEdit.php?id='.$row['Id'].'&type=fish"><button class="btn btn-warning">Edytuj</button></a>';
+                                        echo '<form action="./components/deleteDish.php" method="POST" onsubmit="return confirm(`Czy jesteś pewien, że chcesz usunąć danie z oferty?`);">
+                                        <input type="hidden" name="id" value='.$row['Id'].'/>
+                                        <input type="hidden" name="type" value="fish"/>
+                                        <input type="submit" class="btn btn-danger" value="Usuń">
+                                    </form>';                                                            
+                                echo '</td>
+                                </tr>';
                                 }
                             }                        
                         ?>                     
@@ -173,21 +191,24 @@ include "./components/db_conn.php";
                                     <td>'.$row['Name'].'</td>
                                     <td>'.$row['Price'].'</td>
                                     <td>
-                                        <button class="btn btn-warning">Edytuj</button>    
-                                        <button class="btn btn-danger">Usuń</button>
-                                    </td>
+                                        <a href="dishEdit.php?id='.$row['Id'].'&type=soups"><button class="btn btn-warning">Edytuj</button></a>';
+                                        echo '<form action="./components/deleteDish.php" method="POST" onsubmit="return confirm(`Czy jesteś pewien, że chcesz usunąć danie z oferty?`);">
+                                            <input type="hidden" name="id" value='.$row['Id'].'/>
+                                            <input type="hidden" name="type" value="soups"/>
+                                            <input type="submit" class="btn btn-danger" value="Usuń">
+                                        </form>';                                                            
+                                    echo '</td>
                                     </tr>';
+                                    
                                 }
-                            }                        
-                        ?>                      
+                            }                                                                                     
+                        ?>                                              
                     </tbody>
                 </table>           
-            </div>         
-           
-        </div>
-        
-    </div>
-    
+            </div>                    
+        </div>                        
+    </div>          
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/showDishEditOptions.js"></script>
 </body>

@@ -2,6 +2,8 @@ let mainDishVisibility = document.getElementById("mainDishVisibility");
 let pastaVisibility = document.getElementById("pastaVisibility");
 let fishVisibility = document.getElementById("fishVisibility");
 let soupVisibility = document.getElementById("soupVisibility");
+let allVisibility = document.getElementById("allVisibility");
+let allVisibilityValue = true;
 
 mainDishVisibility.addEventListener("click", () => {
   if (document.getElementById("hideMainDish")) {
@@ -40,5 +42,49 @@ soupVisibility.addEventListener("click", () => {
   } else if (document.getElementById("showSoup")) {
     let mainDishList = document.querySelector("#showSoup");
     mainDishList.setAttribute("id", "hideSoup");
+  }
+});
+
+allVisibility.addEventListener("click", () => {
+  if (allVisibility.classList.contains("hide")) {
+    if (document.querySelector("#showMainDish") != null) {
+      document
+        .querySelector("#showMainDish")
+        .setAttribute("id", "hideMainDish");
+    }
+
+    if (document.querySelector("#showPasta") != null) {
+      document.querySelector("#showPasta").setAttribute("id", "hidePasta");
+    }
+
+    if (document.querySelector("#showFish") != null) {
+      document.querySelector("#showFish").setAttribute("id", "hideFish");
+    }
+
+    if (document.querySelector("#showSoup") != null) {
+      document.querySelector("#showSoup").setAttribute("id", "hideSoup");
+    }
+
+    allVisibility.classList.remove("hide");
+  } else {
+    if (document.querySelector("#hideMainDish") != null) {
+      document
+        .querySelector("#hideMainDish")
+        .setAttribute("id", "showMainDish");
+    }
+
+    if (document.querySelector("#hidePasta") != null) {
+      document.querySelector("#hidePasta").setAttribute("id", "showPasta");
+    }
+
+    if (document.querySelector("#hideFish") != null) {
+      document.querySelector("#hideFish").setAttribute("id", "showFish");
+    }
+
+    if (document.querySelector("#hideSoup") != null) {
+      document.querySelector("#hideSoup").setAttribute("id", "showSoup");
+    }
+
+    allVisibility.classList.add("hide");
   }
 });

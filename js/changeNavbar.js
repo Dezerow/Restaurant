@@ -6,7 +6,9 @@ if (
   currentUrl.includes("userPanel.php") ||
   currentUrl.includes("adminPanel.php") ||
   currentUrl.includes("dishesEdit.php") ||
-  currentUrl.includes("userEdit.php")
+  currentUrl.includes("userEdit.php") ||
+  currentUrl.includes("dishEdit.php") ||
+  currentUrl.includes("addDish.php")
 ) {
   window.onload = () => {
     let elements = document.querySelectorAll(".mainBar");
