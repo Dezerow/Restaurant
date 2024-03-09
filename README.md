@@ -4,8 +4,8 @@ Wprowadzony jest tutaj cały CRUD dla administratora pod kątem zarządzania uż
 
 Projekt nie jest zakończony, zostało: 
 - Dodanie asynchronicznego ładowania
-- Dodaj wysyłania emaila wraz z  potwierdzeniem aby stworzyć kontro - php mailer 
-- Dodaj możliwości zmiany swojego adresu email oraz hasła dla użytkownika
+- Dodanie wysyłania emaila wraz z  potwierdzeniem aby stworzyć kontro - php mailer 
+- Dodanie możliwości zmiany swojego adresu email oraz hasła dla użytkownika
 - Poprawa bugów oraz stworzenie zabezpieczeń
-- Dodaj aplikacji na hosting
+- Dodanie aplikacji na hosting
 
